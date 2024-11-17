@@ -1,22 +1,24 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/UIMain.uss?fileID=7433441132597879392&amp;guid=f38d1db5117b3f541919b203f5340db8&amp;type=3#UIMain" />
-    <engine:VisualElement name="MainPanel" style="flex-grow: 1; flex-direction: row; align-items: center; height: 90%; display: flex;">
+    <engine:VisualElement name="MainPanel" style="flex-grow: 1; flex-direction: row; align-items: center; height: 90%; display: flex; background-image: url(&quot;project://database/Assets/UI%20Toolkit/XML/stream1080p.jpg?fileID=2800000&amp;guid=21149f475c4fb6547be31e2a59733fee&amp;type=3#stream1080p&quot;); -unity-background-scale-mode: scale-and-crop; background-color: rgb(0, 0, 0); -unity-background-image-tint-color: rgba(255, 255, 255, 0.53);">
         <engine:VisualElement name="TrackContainer" class="containOther" style="flex-grow: 1; flex-direction: column; justify-content: center;">
             <engine:VisualElement name="TrackVisual" class="visual" style="flex-grow: 1;">
-                <engine:Label text="Tracking Preview" name="TrackTitleLbl" class="label labelPreview" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                <engine:Label text="Tracking Preview" name="TrackTitleLbl" class="label labelPreview" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; color: rgb(91, 91, 91);" />
             </engine:VisualElement>
             <engine:Button text="Settings" name="TrackConfigBtn" class="button" />
         </engine:VisualElement>
         <engine:VisualElement name="SimContainer" class="containOther" style="flex-grow: 1; justify-content: center;">
             <engine:VisualElement name="SimVisual" class="visual" style="flex-grow: 1;">
-                <engine:Label text="Simulation Preview" name="SimTitleLbl" class="label labelPreview" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                <engine:Label text="Simulation Preview" name="SimTitleLbl" class="label labelPreview" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; color: rgb(91, 91, 91);" />
             </engine:VisualElement>
             <engine:Button text="Settings" name="SimConfigBtn" class="button" />
         </engine:VisualElement>
-        <engine:VisualElement name="PlayContainer" class="containPlay" style="flex-grow: 1; flex-direction: column; justify-content: center; right: 0;">
-            <engine:Label text="LIVING&#10;stream" name="PlayTitleLbl" class="label" style="width: auto; align-self: center; align-content: auto; justify-content: flex-start; align-items: auto; font-size: 60px; height: auto;" />
-            <engine:Button text="Play" name="PlayBtn" class="button" style="width: 60%; height: 10%;" />
-            <engine:Button text="Exit" name="ExitBtn" emoji-fallback-support="false" class="button" style="width: 60%;" />
+        <engine:VisualElement name="PlayContainer" class="containPlay" style="flex-grow: 1; flex-direction: column; justify-content: center; right: 0; transition-duration: 0.2s; height: 100%; align-self: auto; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; transition-timing-function: ease;">
+            <engine:VisualElement name="InnerPlayContainer" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); justify-content: center; transition-duration: 0.2s; background-size: 100% 100%; width: 80%; align-self: center; transition-timing-function: ease;">
+                <engine:Label text="LIVING&#10;stream" name="PlayTitleLbl" class="label" style="width: 60%; align-self: center; align-content: auto; justify-content: flex-start; align-items: auto; font-size: 60px; height: auto; color: rgb(214, 214, 214); transition-timing-function: ease;" />
+                <engine:Button text="Play" name="PlayBtn" class="button" style="width: 60%; height: 10%; transition-timing-function: ease;" />
+                <engine:Button text="Exit" name="ExitBtn" emoji-fallback-support="false" class="button" style="width: 60%; transition-timing-function: ease;" />
+            </engine:VisualElement>
         </engine:VisualElement>
     </engine:VisualElement>
 </engine:UXML>
