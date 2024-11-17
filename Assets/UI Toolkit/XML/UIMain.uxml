@@ -1,0 +1,22 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/UIMain.uss?fileID=7433441132597879392&amp;guid=f38d1db5117b3f541919b203f5340db8&amp;type=3#UIMain" />
+    <engine:VisualElement name="MainPanel" style="flex-grow: 1; flex-direction: row; align-items: center; height: 90%; display: flex;">
+        <engine:VisualElement name="TrackContainer" class="containOther" style="flex-grow: 1; flex-direction: column; justify-content: center;">
+            <engine:VisualElement name="TrackVisual" class="visual" style="flex-grow: 1;">
+                <engine:Label text="Tracking Preview" name="TrackTitleLbl" class="label labelPreview" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+            </engine:VisualElement>
+            <engine:Button text="Settings" name="TrackConfigBtn" class="button" />
+        </engine:VisualElement>
+        <engine:VisualElement name="SimContainer" class="containOther" style="flex-grow: 1; justify-content: center;">
+            <engine:VisualElement name="SimVisual" class="visual" style="flex-grow: 1;">
+                <engine:Label text="Simulation Preview" name="SimTitleLbl" class="label labelPreview" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+            </engine:VisualElement>
+            <engine:Button text="Settings" name="SimConfigBtn" class="button" />
+        </engine:VisualElement>
+        <engine:VisualElement name="PlayContainer" class="containPlay" style="flex-grow: 1; flex-direction: column; justify-content: center; right: 0;">
+            <engine:Label text="LIVING&#10;stream" name="PlayTitleLbl" class="label" style="width: auto; align-self: center; align-content: auto; justify-content: flex-start; align-items: auto; font-size: 60px; height: auto;" />
+            <engine:Button text="Play" name="PlayBtn" class="button" style="width: 60%; height: 10%;" />
+            <engine:Button text="Exit" name="ExitBtn" emoji-fallback-support="false" class="button" style="width: 60%;" />
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>
