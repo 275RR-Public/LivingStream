@@ -707,7 +707,7 @@ MonoBehaviour:
   - {fileID: 305533805}
   - {fileID: 366169562}
   - {fileID: 1526815100}
-  waterSplashPrefab: {fileID: 6001421932009842234, guid: 88df17346aff66444bf3a408dd73ec52, type: 3}
+  waterSplashPrefab: {fileID: 658225994502916793, guid: bf7e5f0d0c6cc1c438f79b2b38636ddc, type: 3}
   influenceRadius: 2
   pushSpeed: 5
   personBoxPrefab: {fileID: 1753673381472510093, guid: a012e649ee2f63a44ae16555d1d6fa98, type: 3}
