@@ -32,12 +32,10 @@ public class FishSceneInteraction : MonoBehaviour
     public float sceneWidth = 10f;
     [Tooltip("Scene height (Unity units) corresponding to sensor height")]
     public float sceneHeight = 7.5f;
-    [Tooltip("Offset for the bottom-left corner of the scene in Unity coordinates (mapped to sensor's (0,0) after inversion)")]
+    [Tooltip("Offset for the bottom-left corner of the scene (in Unity XZ)")]
     public Vector2 sceneOrigin = Vector2.zero;
 
     [Header("Fish and Effects")]
-    [Tooltip("List of fish GameObjects in the scene (should be on the XZ plane)")]
-    public List<GameObject> fishObjects;
     [Tooltip("Prefab for water splash effect (destroyed after a short lifetime)")]
     public GameObject waterSplashPrefab;
     [Tooltip("Minimum distance (in Unity units) for a fish to be affected")]
@@ -122,14 +120,14 @@ public class FishSceneInteraction : MonoBehaviour
             detectionsCopy = new List<TrackingData>(latestDetections);
         }
 
-        // If no detections, remove any existing person boxes.
+        // If no detections, remove all tracked boxes.
         if (detectionsCopy.Count == 0)
         {
             ClearAllPersonBoxes();
             return;
         }
 
-        // Process each detection
+        // Process each detection.
         foreach (TrackingData td in detectionsCopy)
         {
             if (td.center == null || td.center.Length < 2)
@@ -137,7 +135,7 @@ public class FishSceneInteraction : MonoBehaviour
 
             // Convert sensor pixel coordinates to scene (XZ) coordinates.
             Vector2 scenePosXZ = SensorToSceneCoordinates(td.center[0], td.center[1]);
-            // Place the tracked object on the floor (y = 0)
+            // Place the tracked object on the floor (y = 0).
             Vector3 newPos = new Vector3(scenePosXZ.x, 0, scenePosXZ.y);
 
             // Create or update the tracked person box.
@@ -153,18 +151,20 @@ public class FishSceneInteraction : MonoBehaviour
                 Debug.Log("Updated box for detection ID " + td.id);
             }
 
-            // Trigger water splash effect at the detection point.
+            // Trigger a water splash effect at the detection point.
             if (waterSplashPrefab != null)
             {
                 GameObject splash = Instantiate(waterSplashPrefab, newPos, Quaternion.identity);
                 Destroy(splash, 2f); // Destroy splash after 2 seconds.
             }
 
-            // Push fish away if within influence radius.
-            foreach (GameObject fish in fishObjects)
+            // Push fish away from the detection.
+            // Instead of relying on a preset list, we find all fish tagged as "Fish".
+            GameObject[] fishArray = GameObject.FindGameObjectsWithTag("Fish");
+            foreach (GameObject fish in fishArray)
             {
                 Vector3 fishPos = fish.transform.position;
-                // Use fish's XZ coordinates.
+                // Use the fish's XZ coordinates.
                 Vector2 fishPosXZ = new Vector2(fishPos.x, fishPos.z);
                 float distance = Vector2.Distance(fishPosXZ, scenePosXZ);
                 if (distance < influenceRadius)
@@ -193,12 +193,12 @@ public class FishSceneInteraction : MonoBehaviour
         }
     }
 
-    // Maps sensor pixel coordinates to scene XZ coordinates.
+    // Maps sensor pixel coordinates (origin top-left) to scene XZ coordinates.
     Vector2 SensorToSceneCoordinates(float sensorX, float sensorY)
     {
-        // Normalize sensor coordinates (assuming sensor origin is top-left)
-        float normX = sensorX / sensorWidth;  // 0 (left) to 1 (right)
-        float normY = sensorY / sensorHeight; // 0 (top) to 1 (bottom)
+        // Normalize sensor coordinates.
+        float normX = sensorX / sensorWidth;  // 0 = left, 1 = right.
+        float normY = sensorY / sensorHeight; // 0 = top, 1 = bottom.
         // Invert Y so that sensor top maps to scene bottom.
         normY = 1 - normY;
 
@@ -207,7 +207,7 @@ public class FishSceneInteraction : MonoBehaviour
         return new Vector2(sceneX, sceneZ);
     }
 
-    // Destroys all existing person boxes.
+    // Removes all tracked person boxes.
     void ClearAllPersonBoxes()
     {
         foreach (var kvp in personBoxes)
