@@ -1,5 +1,0 @@
-- internet access required
-- windows10 might need to enable camera in privacy settings (search "camera privacy")
-- install python 3.11.9
-- create virtual env
-- pip install pyrealsense2 opencv-python numpy ultralytics deep-sort-realtime
