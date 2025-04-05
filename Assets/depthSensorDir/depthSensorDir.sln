@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{997D2254-E892-2349-CE64-7B07AB268268}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipelines.HighDefinitionConfig.Editor.Tests", "Unity.RenderPipelines.HighDefinitionConfig.Editor.Tests.csproj", "{AC418A8F-DFA5-F34C-D17F-1C75A8D8DAEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipelines.HighDefinition.Config.Runtime", "Unity.RenderPipelines.HighDefinition.Config.Runtime.csproj", "{13E94C8F-E149-5B49-B393-B9F134FFCD40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +23,14 @@ Global
 		{997D2254-E892-2349-CE64-7B07AB268268}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{997D2254-E892-2349-CE64-7B07AB268268}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{997D2254-E892-2349-CE64-7B07AB268268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC418A8F-DFA5-F34C-D17F-1C75A8D8DAEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC418A8F-DFA5-F34C-D17F-1C75A8D8DAEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC418A8F-DFA5-F34C-D17F-1C75A8D8DAEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC418A8F-DFA5-F34C-D17F-1C75A8D8DAEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13E94C8F-E149-5B49-B393-B9F134FFCD40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13E94C8F-E149-5B49-B393-B9F134FFCD40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13E94C8F-E149-5B49-B393-B9F134FFCD40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13E94C8F-E149-5B49-B393-B9F134FFCD40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
