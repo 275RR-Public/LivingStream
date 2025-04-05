@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 2260fc03ede664c4aa5902d21993f1dd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - trackedBoxPrefab: {instanceID: 0}
+  - ocean: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

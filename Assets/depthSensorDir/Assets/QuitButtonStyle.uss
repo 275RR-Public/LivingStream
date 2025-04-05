@@ -1,0 +1,19 @@
+.quit-button {
+    width: 200px;
+    height: 80px;
+    background-color: rgb(60, 60, 60);
+    color: white;
+    font-size: 30px;
+    border-width: 3px;
+    border-color: rgb(30, 30, 30);
+    border-radius: 10px;
+    transition-duration: 0s;
+}
+
+.quit-button:active {
+    background-color: rgb(40, 40, 40);
+}
+
+.quit-button:hover {
+    background-color: rgb(100, 100, 100);
+}

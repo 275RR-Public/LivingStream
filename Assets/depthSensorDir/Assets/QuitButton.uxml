@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/QuitButtonStyle.uss?fileID=7433441132597879392&amp;guid=6c7205a762d36284bb0a6a13c39b03d0&amp;type=3#QuitButtonStyle" />
+    <ui:VisualElement style="height: 90%; align-items: center; justify-content: flex-end; align-self: center; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;">
+        <ui:Button text="Lower Tide" name="TideButton" class="quit-button" style="margin-bottom: 20px;" />
+        <ui:Button text="Quit" name="QuitButton" class="quit-button" />
+    </ui:VisualElement>
+</ui:UXML>
